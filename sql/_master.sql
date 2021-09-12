@@ -1,13 +1,13 @@
 
-SELECT sysdate || ' ### DROP TABLES ###' AS ' ';
+SELECT SYSDATE() || ' ### DROP TABLES ###' AS ' ';
 
 source drop_tables.sql
 
-SELECT sysdate || ' ### CREATE TABLES ###' AS ' ';
+SELECT SYSDATE() || ' ### CREATE TABLES ###' AS ' ';
 
 source create_tables_ansi.sql
 
-SELECT sysdate || ' ### IMPORT AUTHORITY CODE DATA ###' AS ' ';
+SELECT SYSDATE() || ' ### IMPORT AUTHORITY CODE DATA ###' AS ' ';
 
 LOAD DATA LOCAL INFILE '../data/Authority Code/Authority_Code_ADDRESS_ALIAS_TYPE_AUT_psv.psv'           INTO TABLE ADDRESS_ALIAS_TYPE_AUT         FIELDS TERMINATED BY '|' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
 LOAD DATA LOCAL INFILE '../data/Authority Code/Authority_Code_ADDRESS_TYPE_AUT_psv.psv'                 INTO TABLE ADDRESS_TYPE_AUT               FIELDS TERMINATED BY '|' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
@@ -25,7 +25,7 @@ LOAD DATA LOCAL INFILE '../data/Authority Code/Authority_Code_STREET_TYPE_AUT_ps
 LOAD DATA LOCAL INFILE '../data/Authority Code/Authority_Code_STREET_LOCALITY_ALIAS_TYPE_AUT_psv.psv'   INTO TABLE STREET_LOCALITY_ALIAS_TYPE_AUT FIELDS TERMINATED BY '|' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
 LOAD DATA LOCAL INFILE '../data/Authority Code/Authority_Code_STREET_SUFFIX_AUT_psv.psv'                INTO TABLE STREET_SUFFIX_AUT              FIELDS TERMINATED BY '|' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
 
-SELECT sysdate || ' ### IMPORT WA DATA ###' AS ' ';
+SELECT SYSDATE() || ' ### IMPORT WA DATA ###' AS ' ';
 
 LOAD DATA LOCAL INFILE '../data/Standard/WA_ADDRESS_ALIAS_psv.psv'           INTO TABLE ADDRESS_ALIAS           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
 LOAD DATA LOCAL INFILE '../data/Standard/WA_ADDRESS_DEFAULT_GEOCODE_psv.psv' INTO TABLE ADDRESS_DEFAULT_GEOCODE FIELDS TERMINATED BY '|' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
@@ -47,11 +47,11 @@ LOAD DATA LOCAL INFILE '../data/Standard/WA_STREET_LOCALITY_POINT_psv.psv'   INT
 LOAD DATA LOCAL INFILE '../data/Standard/WA_STREET_LOCALITY_psv.psv'         INTO TABLE STREET_LOCALITY         FIELDS TERMINATED BY '|' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
 
 
-SELECT sysdate || ' ### CREATE TABLE RELATIONSHIPS ###' AS ' ';
+SELECT SYSDATE() || ' ### CREATE TABLE RELATIONSHIPS ###' AS ' ';
 
 source add_fk_constraints.sql
 
-SELECT sysdate || ' ### CREATE VIEWS ###' AS ' ';
+SELECT SYSDATE() || ' ### CREATE VIEWS ###' AS ' ';
 
 source address_view.sql
 
