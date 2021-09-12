@@ -93,6 +93,16 @@ CREATE TABLE ADDRESS_MESH_BLOCK_2016 (
  mb_2016_pid varchar(15) NOT NULL
 );
 
+
+CREATE TABLE ADDRESS_MESH_BLOCK_2021 (
+ address_mesh_block_2021_pid varchar(15) NOT NULL,
+ date_created date NOT NULL,
+ date_retired date,
+ address_detail_pid varchar(15) NOT NULL,
+ mb_match_code varchar(15) NOT NULL,
+ mb_2021_pid varchar(15) NOT NULL
+);
+
 CREATE TABLE ADDRESS_SITE (
  address_site_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
@@ -218,6 +228,13 @@ CREATE TABLE MB_2016 (
  date_created date NOT NULL,
  date_retired date,
  mb_2016_code varchar(15) NOT NULL
+);
+
+CREATE TABLE MB_2021 (
+ mb_2021_pid varchar(15) NOT NULL,
+ date_created date NOT NULL,
+ date_retired date,
+ mb_2021_code varchar(15) NOT NULL
 );
 
 CREATE TABLE MB_MATCH_CODE_AUT (
