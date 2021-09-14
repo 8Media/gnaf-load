@@ -40,7 +40,7 @@ CREATE TABLE ADDRESS_DEFAULT_GEOCODE (
 CREATE TABLE ADDRESS_DETAIL (
  address_detail_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_last_modified date,
+ date_last_modified varchar(50),
  date_retired varchar(50),
  building_name varchar(200),
  lot_number_prefix varchar(2),
