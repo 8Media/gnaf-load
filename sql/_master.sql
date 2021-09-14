@@ -225,3 +225,7 @@ SELECT SYSDATE() || ' ### CREATE VIEWS ###' AS ' ';
 
 source address_view.sql
 
+SELECT SYSDATE() || ' ### CREATE FULL TABLE ###' AS ' ';
+
+source full_table.sql
+
