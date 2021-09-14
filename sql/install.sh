@@ -46,9 +46,21 @@ mysql_db_name="gnaf"
 ##MySQL##
 sudo apt install -y mysql-server
 
+#unzip
+sudo apt install -y unzip
+
 #Set initial password
 sudo mysql --user="root" --password="" --execute="ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${password}';"
 
 #create DB
 sudo mysql --user="root" --password="${password}" --execute="CREATE DATABASE ${mysql_db_name};"
 
+#make directory
+mkdir /address
+
+filename="g-naf_aug21_australia_gda2020.zip"
+
+#Download
+wget https://data.gov.au/data/dataset/19432f89-dc3a-4ef3-b943-5326ef1dbecc/resource/fdce090a-b356-4afe-91bb-c78fbf88082a/download/${filename} -P /address
+
+unzip /address/${filename} /address/
