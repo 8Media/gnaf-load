@@ -14,7 +14,7 @@
 CREATE TABLE ADDRESS_ALIAS (
  address_alias_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  principal_pid varchar(15) NOT NULL,
  alias_pid varchar(15) NOT NULL,
  alias_type_code varchar(10) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE ADDRESS_ALIAS_TYPE_AUT (
 CREATE TABLE ADDRESS_DEFAULT_GEOCODE (
  address_default_geocode_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  address_detail_pid varchar(15) NOT NULL,
  geocode_type_code varchar(4) NOT NULL,
  longitude numeric(11,8),
@@ -41,7 +41,7 @@ CREATE TABLE ADDRESS_DETAIL (
  address_detail_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
  date_last_modified date,
- date_retired date,
+ date_retired varchar(50),
  building_name varchar(200),
  lot_number_prefix varchar(2),
  lot_number varchar(5),
@@ -78,7 +78,7 @@ CREATE TABLE ADDRESS_DETAIL (
 CREATE TABLE ADDRESS_MESH_BLOCK_2011 (
  address_mesh_block_2011_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  address_detail_pid varchar(15) NOT NULL,
  mb_match_code varchar(15) NOT NULL,
  mb_2011_pid varchar(15) NOT NULL
@@ -87,7 +87,7 @@ CREATE TABLE ADDRESS_MESH_BLOCK_2011 (
 CREATE TABLE ADDRESS_MESH_BLOCK_2016 (
  address_mesh_block_2016_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  address_detail_pid varchar(15) NOT NULL,
  mb_match_code varchar(15) NOT NULL,
  mb_2016_pid varchar(15) NOT NULL
@@ -97,7 +97,7 @@ CREATE TABLE ADDRESS_MESH_BLOCK_2016 (
 CREATE TABLE ADDRESS_MESH_BLOCK_2021 (
  address_mesh_block_2021_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  address_detail_pid varchar(15) NOT NULL,
  mb_match_code varchar(15) NOT NULL,
  mb_2021_pid varchar(15) NOT NULL
@@ -106,7 +106,7 @@ CREATE TABLE ADDRESS_MESH_BLOCK_2021 (
 CREATE TABLE ADDRESS_SITE (
  address_site_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  address_type varchar(8),
  address_site_name varchar(200)
 );
@@ -114,7 +114,7 @@ CREATE TABLE ADDRESS_SITE (
 CREATE TABLE ADDRESS_SITE_GEOCODE (
  address_site_geocode_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  address_site_pid varchar(15),
  geocode_site_name varchar(200),
  geocode_site_description varchar(45),
@@ -166,7 +166,7 @@ CREATE TABLE LEVEL_TYPE_AUT (
 CREATE TABLE LOCALITY (
  locality_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  locality_name varchar(100) NOT NULL,
  primary_postcode varchar(4),
  locality_class_code char(1) NOT NULL,
@@ -178,7 +178,7 @@ CREATE TABLE LOCALITY (
 CREATE TABLE LOCALITY_ALIAS (
  locality_alias_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  locality_pid varchar(15) NOT NULL,
  name varchar(100) NOT NULL,
  postcode varchar(4),
@@ -201,7 +201,7 @@ CREATE TABLE LOCALITY_CLASS_AUT (
 CREATE TABLE LOCALITY_NEIGHBOUR (
  locality_neighbour_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  locality_pid varchar(15) NOT NULL,
  neighbour_locality_pid varchar(15) NOT NULL
 );
@@ -209,7 +209,7 @@ CREATE TABLE LOCALITY_NEIGHBOUR (
 CREATE TABLE LOCALITY_POINT (
  locality_point_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  locality_pid varchar(15) NOT NULL,
  planimetric_accuracy numeric(12),
  longitude numeric(11,8),
@@ -219,21 +219,21 @@ CREATE TABLE LOCALITY_POINT (
 CREATE TABLE MB_2011 (
  mb_2011_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  mb_2011_code varchar(15) NOT NULL
 );
 
 CREATE TABLE MB_2016 (
  mb_2016_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  mb_2016_code varchar(15) NOT NULL
 );
 
 CREATE TABLE MB_2021 (
  mb_2021_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  mb_2021_code varchar(15) NOT NULL
 );
 
@@ -248,7 +248,7 @@ CREATE TABLE PRIMARY_SECONDARY (
  primary_pid varchar(15) NOT NULL,
  secondary_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  ps_join_type_code numeric(2) NOT NULL,
  ps_join_comment varchar(500)
 );
@@ -262,7 +262,7 @@ CREATE TABLE PS_JOIN_TYPE_AUT (
 CREATE TABLE STATE (
  state_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  state_name varchar(50) NOT NULL,
  state_abbreviation varchar(3) NOT NULL
 );
@@ -276,7 +276,7 @@ CREATE TABLE STREET_CLASS_AUT (
 CREATE TABLE STREET_LOCALITY (
  street_locality_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  street_class_code char(1) NOT NULL,
  street_name varchar(100) NOT NULL,
  street_type_code varchar(15),
@@ -290,7 +290,7 @@ CREATE TABLE STREET_LOCALITY (
 CREATE TABLE STREET_LOCALITY_ALIAS (
  street_locality_alias_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  street_locality_pid varchar(15) NOT NULL,
  street_name varchar(100) NOT NULL,
  street_type_code varchar(15),
@@ -307,7 +307,7 @@ CREATE TABLE STREET_LOCALITY_ALIAS_TYPE_AUT (
 CREATE TABLE STREET_LOCALITY_POINT (
  street_locality_point_pid varchar(15) NOT NULL,
  date_created date NOT NULL,
- date_retired date,
+ date_retired varchar(50),
  street_locality_pid varchar(15) NOT NULL,
  boundary_extent numeric(7),
  planimetric_accuracy numeric(12),
