@@ -70,6 +70,8 @@ unzip /address/${filename} -d /address/
 mv "/address/G-NAF/G-NAF AUGUST 2021/Authority Code" /gnaf-load/data
 mv "/address/G-NAF/G-NAF AUGUST 2021/Standard" /gnaf-load/data
 
-mysql -u gnaf -h host -p gnaf < /gnaf-load/sql/_master.sql
+#Allow MySQL local dataload
+sudo mysql --user="root" --password="${password}" --execute="SET GLOBAL local_infile=1;"
 
+#Run the sql script
 mysql --user="root" --password="${password}" gnaf < /gnaf-load/sql/_master.sql
