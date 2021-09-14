@@ -63,4 +63,13 @@ filename="g-naf_aug21_australia_gda2020.zip"
 #Download
 wget https://data.gov.au/data/dataset/19432f89-dc3a-4ef3-b943-5326ef1dbecc/resource/fdce090a-b356-4afe-91bb-c78fbf88082a/download/${filename} -P /address
 
-unzip /address/${filename} /address/
+#Unzip
+unzip /address/${filename} -d /address/
+
+#Move unzipped data
+mv "/address/G-NAF/G-NAF AUGUST 2021/Authority Code" /gnaf-load/data
+mv "/address/G-NAF/G-NAF AUGUST 2021/Standard" /gnaf-load/data
+
+mysql -u gnaf -h host -p gnaf < /gnaf-load/sql/_master.sql
+
+mysql --user="root" --password="${password}" gnaf < /gnaf-load/sql/_master.sql
