@@ -74,4 +74,4 @@ mv "/address/G-NAF/G-NAF AUGUST 2021/Standard" /gnaf-load/data
 sudo mysql --user="root" --password="${password}" --execute="SET GLOBAL local_infile=1;"
 
 #Run the sql script
-mysql --user="root" --password="${password}" gnaf < /gnaf-load/sql/_master.sql
+mysql --local-infile=1 --user="root" --password="${password}" gnaf < /gnaf-load/sql/_master.sql
